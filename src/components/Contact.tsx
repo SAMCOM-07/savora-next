@@ -5,9 +5,9 @@ import { SectionHeading } from './ui/SectionHeading';
 import { Reveal } from './ui/Reveal';
 
 const HOURS = [
-{ day: 'Monday – Thursday', time: '5:00 PM – 11:00 PM' },
-{ day: 'Friday – Saturday', time: '5:00 PM – 1:00 AM' },
-{ day: 'Sunday', time: '4:00 PM – 10:00 PM' }];
+{ day: 'Monday - Thursday', time: '5:00 PM - 11:00 PM' },
+{ day: 'Friday - Saturday', time: '5:00 PM - 1:00 AM' },
+{ day: 'Sunday', time: '4:00 PM - 10:00 PM' }];
 
 
 export function Contact() {
@@ -54,7 +54,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="h-full min-h-[24rem] overflow-hidden rounded-3xl border border-white/8">
+          <div className="h-full min-h-96 overflow-hidden rounded-3xl border border-white/8">
             <iframe
               title="Savora location map"
               className="h-full w-full grayscale"

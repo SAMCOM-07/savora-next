@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://savora.example.com'),
+  metadataBase: new URL('https://savora-next.vercel.app'),
   title: {
     default: 'Savora | Fine Dining Restaurant',
     template: '%s | Savora',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description: 'An elegant fine dining experience with seasonal menus, immersive ambiance, and exceptional hospitality.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://savora.example.com',
+    url: 'https://savora-next.vercel.app',
     siteName: 'Savora',
   },
   twitter: {
