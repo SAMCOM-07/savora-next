@@ -1,0 +1,101 @@
+@import"https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+@import"https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* @import './../_designSystem/ds-6551b66a-cfd3-4df9-a9b1-9ead8d7fe7e9/index.css'; */
+@import "tailwindcss";
+
+
+@theme {
+  --color-ink: #0B0B0B;
+  --color-ink-soft: #141414;
+  --color-ink-card: #161616;
+
+  --color-gold: #C89B3C;
+  --color-gold-soft: #E4C67E;
+
+  --color-beige: #D9CDB5;
+  --color-beige-muted: #8A8272;
+
+  --color-cream: #F5F1E8;
+
+  --font-heading: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --tracking-luxe: 0.35em;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px
+  }
+}
+
+
+html,
+:host {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  -webkit-tap-highlight-color: transparent
+}
+
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px
+}
+
+abbr:where([title]) {
+  text-decoration: underline dotted
+}
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background-color: #0B0B0B;
+  color: #F5F1E8;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  line-height: inherit
+}
+
+::selection {
+  background-color: #C89B3C;
+  color: #0B0B0B;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C89B3C;
+}

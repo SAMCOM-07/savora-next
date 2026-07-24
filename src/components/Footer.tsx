@@ -1,0 +1,14 @@
+
+import Link from 'next/link';
+import { MapPin, Phone, Mail } from 'lucide-react';
+import { NAV_LINKS } from '../app/lib/data';
+
+export function Footer() {
+  return <footer className="border-t border-white/8 bg-ink-soft">
+    <div className="container py-16">
+      <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4"><div>
+        <Link href="/" className="font-heading text-3xl font-semibold text-cream">Sav<span className="text-gold">o</span>ra</Link><p className="mt-5 max-w-xs text-sm leading-relaxed text-beige-muted">An award-winning fine dining destination where every evening becomes an unforgettable memory.</p>
+        <div className="mt-6 flex gap-3">{[Mail, Mail, Mail].map((Icon, index) => <a key={index} href="#" aria-label="Social link" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-beige transition-colors hover:border-gold hover:text-gold"><Icon className="h-4 w-4" /></a>)}
+        </div>
+      </div><div><h4 className="text-xs uppercase tracking-luxe text-gold">Explore</h4><ul className="mt-5 space-y-3">{NAV_LINKS.map((link) => <li key={link.href}><Link href={link.href} className="text-sm text-beige-muted transition-colors hover:text-gold">{link.label}</Link></li>)}<li><Link href="/faq" className="text-sm text-beige-muted transition-colors hover:text-gold">FAQ</Link></li></ul></div><div><h4 className="text-xs uppercase tracking-luxe text-gold">Contact</h4><ul className="mt-5 space-y-4 text-sm text-beige-muted"><li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />128 Belrose Avenue, New York, NY 10012</li><li className="flex items-center gap-3"><Phone className="h-4 w-4 shrink-0 text-gold" />+1 (212) 000-0000</li><li className="flex items-center gap-3"><Mail className="h-4 w-4 shrink-0 text-gold" />reservations@savora.com</li></ul></div><div><h4 className="text-xs uppercase tracking-luxe text-gold">Hours</h4><ul className="mt-5 space-y-3 text-sm text-beige-muted"><li>Mon – Thu · 5PM – 11PM</li><li>Fri – Sat · 5PM – 1AM</li><li>Sunday · 4PM – 10PM</li></ul><Link href="/reservation" className="mt-6 inline-flex rounded-full bg-gold px-6 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-gold-soft">Reserve a Table</Link></div></div><div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/8 pt-8 text-sm text-beige-muted sm:flex-row"><p>© {new Date().getFullYear()} Savora. All rights reserved.</p><div className="flex gap-6"><a href="#" className="transition-colors hover:text-gold">Privacy</a><a href="#" className="transition-colors hover:text-gold">Terms</a></div></div></div></footer>;
+}
