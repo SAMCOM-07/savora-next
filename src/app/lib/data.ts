@@ -3,7 +3,7 @@ export const NAV_LINKS = [
   { label: "Menu", href: "/menu" },
   { label: "About", href: "/about" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Journal", href: "/journal" },
+  { label: "Journal", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
