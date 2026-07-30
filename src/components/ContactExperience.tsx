@@ -1,18 +1,163 @@
-'use client'
+"use client";
 
-import { useState } from 'react';
-import { CheckCircle2, Mail, MapPin, Phone, Send, Clock3 } from 'lucide-react';
-import { IMAGES } from '../app/lib/data';
-import { Reveal } from './ui/Reveal';
-import { ImageFrame } from './ImageFrame';
+import { useState } from "react";
+import { CheckCircle2, Mail, MapPin, Phone, Send, Clock3 } from "lucide-react";
+import { IMAGES } from "../app/lib/data";
+import { Reveal } from "./ui/Reveal";
+import { ImageFrame } from "./ImageFrame";
 
-const field = 'w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-cream placeholder:text-beige-muted focus:border-gold focus:outline-none';
+const field =
+  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-cream placeholder:text-beige-muted focus:border-gold focus:outline-none";
 
 export function ContactExperience() {
   const [sent, setSent] = useState(false);
-  return <section className="container py-20 lg:py-28"><div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]"><Reveal><div className="overflow-hidden rounded-[2rem] border border-white/8 bg-ink-card"><ImageFrame src={IMAGES.diningRoom} alt="The glowing Savora restaurant interior" className="h-60 w-full object-cover" /><div className="p-8"><div className="space-y-6">{[{ icon: MapPin, title: 'Find us', text: '128 Belrose Avenue\nNew York, NY 10012' }, { icon: Clock3, title: 'Opening hours', text: 'Mon–Thu 5PM–11PM\nFri–Sat 5PM–1AM\nSun 4PM–10PM' }, { icon: Phone, title: 'Call us', text: '+1 (212) 555-0198' }, { icon: Mail, title: 'Write to us', text: 'reservations@savora.com' }].map((item) => <div key={item.title} className="flex gap-4"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-gold"><item.icon className="h-5 w-5" /></span><div><p className="text-xs uppercase tracking-widest text-gold">{item.title}</p><p className="mt-1 whitespace-pre-line text-sm leading-relaxed text-beige">{item.text}</p></div></div>)}</div>
-    <div className="mt-8 flex gap-3 border-t border-white/8 pt-6"><a href="#" aria-label="Instagram" className="rounded-full border border-white/10 p-2.5 text-beige hover:border-gold hover:text-gold"><Mail className="h-4 w-4" /></a><a href="#" aria-label="Facebook" className="rounded-full border border-white/10 p-2.5 text-beige hover:border-gold hover:text-gold"><Mail className="h-4 w-4" /></a></div></div></div></Reveal>
-    <Reveal delay={0.1}><div className="h-full rounded-[2rem] border border-white/8 bg-ink-card p-7 sm:p-10">{sent ? <div className="flex min-h-[31rem] flex-col items-center justify-center text-center"><span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-gold"><CheckCircle2 className="h-9 w-9" /></span><h2 className="mt-6 font-heading text-3xl text-cream">Thank you for reaching out.</h2><p className="mt-3 max-w-sm leading-relaxed text-beige-muted">Our guest relations team will respond within one business day.</p><button onClick={() => setSent(false)} className="mt-7 text-sm text-gold hover:underline">Send another message</button></div> : <form onSubmit={(event) => { event.preventDefault(); setSent(true); }}><p className="text-xs uppercase tracking-luxe text-gold">Guest relations</p><h2 className="mt-3 font-heading text-3xl text-cream">How can we help?</h2><p className="mt-3 text-sm leading-relaxed text-beige-muted">For reservations, private events, press or anything else — we’re listening.</p><div className="mt-8 grid gap-4 sm:grid-cols-2"><input required className={field} placeholder="Your name" /><input required type="email" className={field} placeholder="Email address" /><select className={`${field} sm:col-span-2`} defaultValue="General inquiry"><option className="bg-ink">General inquiry</option><option className="bg-ink">Private dining</option><option className="bg-ink">Press inquiry</option><option className="bg-ink">Careers</option></select><textarea required className={`${field} min-h-40 sm:col-span-2`} placeholder="Tell us a little more" /></div><button className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-gold-soft">Send message <Send className="h-4 w-4" /></button></form>}</div></Reveal></div>
-    <Reveal><div className="mt-8 h-80 overflow-hidden rounded-3xl border border-white/8"><iframe title="Savora location map" className="h-full w-full grayscale" style={{ border: 0, filter: 'grayscale(1) invert(0.88) contrast(0.9)' }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.006%2C40.719%2C-73.996%2C40.727&layer=mapnik&marker=40.723%2C-74.001" /></div></Reveal>
-  </section>;
+  return (
+    <section className="container py-20 lg:py-28">
+      <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+        <Reveal>
+          <div className="overflow-hidden rounded-4xl border border-white/8 bg-ink-card">
+            <ImageFrame
+              src={IMAGES.diningRoom}
+              alt="The glowing Savora restaurant interior"
+              className="h-60 w-full object-cover"
+            />
+            <div className="p-8">
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: MapPin,
+                    title: "Find us",
+                    text: "128 Belrose Avenue\nNew York, NY 10012",
+                  },
+                  {
+                    icon: Clock3,
+                    title: "Opening hours",
+                    text: "Mon–Thu 5PM–11PM\nFri–Sat 5PM–1AM\nSun 4PM–10PM",
+                  },
+                  { icon: Phone, title: "Call us", text: "+1 (212) 555-0198" },
+                  {
+                    icon: Mail,
+                    title: "Write to us",
+                    text: "reservations@savora.com",
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-gold">
+                      <item.icon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <p className="text-xs uppercase tracking-widest text-gold">
+                        {item.title}
+                      </p>
+                      <p className="mt-1 whitespace-pre-line text-sm leading-relaxed text-beige">
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 flex gap-3 border-t border-white/8 pt-6">
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  className="rounded-full border border-white/10 p-2.5 text-beige hover:border-gold hover:text-gold"
+                >
+                  <Mail className="h-4 w-4" />
+                </a>
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  className="rounded-full border border-white/10 p-2.5 text-beige hover:border-gold hover:text-gold"
+                >
+                  <Mail className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <div className="h-full rounded-[2rem] border border-white/8 bg-ink-card p-7 sm:p-10">
+            {sent ? (
+              <div className="flex min-h-[31rem] flex-col items-center justify-center text-center">
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-gold">
+                  <CheckCircle2 className="h-9 w-9" />
+                </span>
+                <h2 className="mt-6 font-heading text-3xl text-cream">
+                  Thank you for reaching out.
+                </h2>
+                <p className="mt-3 max-w-sm leading-relaxed text-beige-muted">
+                  Our guest relations team will respond within one business day.
+                </p>
+                <button
+                  onClick={() => setSent(false)}
+                  className="mt-7 text-sm text-gold hover:underline"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  setSent(true);
+                }}
+              >
+                <p className="text-xs uppercase tracking-luxe text-gold">
+                  Guest relations
+                </p>
+                <h2 className="mt-3 font-heading text-3xl text-cream">
+                  How can we help?
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-beige-muted">
+                  For reservations, private events, press or anything else —
+                  we’re listening.
+                </p>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  <input required className={field} placeholder="Your name" />
+                  <input
+                    required
+                    type="email"
+                    className={field}
+                    placeholder="Email address"
+                  />
+                  <select
+                    className={`${field} sm:col-span-2`}
+                    defaultValue="General inquiry"
+                  >
+                    <option className="bg-ink">General inquiry</option>
+                    <option className="bg-ink">Private dining</option>
+                    <option className="bg-ink">Press inquiry</option>
+                    <option className="bg-ink">Careers</option>
+                  </select>
+                  <textarea
+                    required
+                    className={`${field} min-h-40 sm:col-span-2`}
+                    placeholder="Tell us a little more"
+                  />
+                </div>
+                <button className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-gold-soft">
+                  Send message <Send className="h-4 w-4" />
+                </button>
+              </form>
+            )}
+          </div>
+        </Reveal>
+      </div>
+      <Reveal>
+        <div className="mt-8 h-80 overflow-hidden rounded-3xl border border-white/8">
+          <iframe
+            title="Savora location map"
+            className="h-full w-full grayscale"
+            style={{
+              border: 0,
+              filter: "grayscale(1) invert(0.88) contrast(0.9)",
+            }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-74.006%2C40.719%2C-73.996%2C40.727&layer=mapnik&marker=40.723%2C-74.001"
+          />
+        </div>
+      </Reveal>
+    </section>
+  );
 }

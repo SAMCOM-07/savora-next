@@ -2,9 +2,7 @@
 @import "https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,50OTH;O,6OOTH;O,7OOTH;O,8OOTH;O,9OOTH;1,4OOTH;1,5OOTH&family=Inter:wght@3OOTH;4OOTH;5OOTH;6OOTH;7OOTH&display=swap');
 
-/* @import './../_designSystem/ds-6551b66a-cfd3-4df9-a9b1-9ead8d7fe7e9/index.css'; */
 @import "tailwindcss";
-
 
 @theme {
   --color-ink: #0B0B0B;

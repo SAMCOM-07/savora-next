@@ -1,0 +1,6 @@
+# Allow all search engines to crawl the website
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://savora-next.vercel.app/sitemap.xml

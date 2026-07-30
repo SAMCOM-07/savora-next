@@ -17,32 +17,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://savora-next.vercel.app'),
+  metadataBase: new URL("https://savora-next.vercel.app"),
   title: {
-    default: 'Savora | Fine Dining Restaurant',
-    template: '%s | Savora',
+    default: "Savora | Fine Dining Restaurant",
+    template: "%s | Savora",
   },
   description:
-    'An elegant fine dining experience with seasonal menus, immersive ambiance, and exceptional hospitality.',
-  keywords: ['restaurant', 'fine dining', 'savora', 'New York dining', 'chef tasting menu'],
-  authors: [{ name: 'Savora' }],
-  creator: 'Savora',
+    "An elegant fine dining experience with seasonal menus, immersive ambiance, and exceptional hospitality.",
+  keywords: [
+    "restaurant",
+    "fine dining",
+    "savora",
+    "New York dining",
+    "chef tasting menu",
+  ],
+  authors: [{ name: "Savora" }],
+  creator: "Savora",
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'Savora | Fine Dining Restaurant',
-    description: 'An elegant fine dining experience with seasonal menus, immersive ambiance, and exceptional hospitality.',
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://savora-next.vercel.app',
-    siteName: 'Savora',
+    title: "Savora | Fine Dining Restaurant",
+    description:
+      "An elegant fine dining experience with seasonal menus, immersive ambiance, and exceptional hospitality.",
+    type: "website",
+    locale: "en_US",
+    url: "https://savora-next.vercel.app",
+    siteName: "Savora",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Savora | Fine Dining Restaurant',
-    description: 'An elegant fine dining experience with seasonal menus, immersive ambiance, and exceptional hospitality.',
+    card: "summary_large_image",
+    title: "Savora | Fine Dining Restaurant",
+    description:
+      "An elegant fine dining experience with seasonal menus, immersive ambiance, and exceptional hospitality.",
   },
 };
 
@@ -56,6 +64,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <meta
+          name="google-site-verification"
+          content="TXGAApfYoQlYQxnV7s3s7trHwEWFbchma88PXHOatYQ"
+        />
+      </head>
       <body className="min-h-screen bg-ink text-cream antialiased">
         <div className="min-h-screen w-full overflow-x-hidden bg-ink text-cream">
           <ScrollToTop />

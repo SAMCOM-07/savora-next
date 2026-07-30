@@ -2785,7 +2785,7 @@ var Fu = Hr.forwardRef(
     return kt("div", {
       ref: n,
       "data-slot": "calendar",
-      className: Br("bg-background p-2 w-fit", e),
+      className: Br("bg-background p-2 w-full", e),
       ...s,
       "data-id": "element-222",
       children: [
@@ -2850,10 +2850,10 @@ var Fu = Hr.forwardRef(
                       type: "button",
                       onClick: () => t?.(new Date(l, m, w)),
                       className: Br(
-                        "inline-flex size-7 items-center justify-center rounded-md text-sm transition-colors hover:bg-muted",
-                        b(w) && "bg-muted font-medium",
+                        "inline-flex size-7 items-center justify-center rounded-md text-sm transition-colors hover:bg-gray-600 cursor-pointer",
+                        b(w) && "bg-gray-700 font-medium",
                         h(w) &&
-                          "bg-primary text-primary-foreground hover:bg-primary/80",
+                          "bg-gold text-primary-foreground hover:bg-primary/80",
                       ),
                       "data-id": "element-232",
                       children: w,
